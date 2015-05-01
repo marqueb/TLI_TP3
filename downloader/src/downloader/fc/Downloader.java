@@ -35,7 +35,7 @@ public class Downloader {
 			content_length = connection.getContentLength();
 			
 			in = new BufferedInputStream(connection.getInputStream());
-			
+
 			String[] path = url.getFile().split("/");
 			filename = path[path.length-1];
 			temp = File.createTempFile(filename, ".part");
@@ -49,6 +49,10 @@ public class Downloader {
 		return url.toString();
 	}
 	
+	public int getContent_length() {
+		return content_length;
+	}
+
 	public String download() throws InterruptedException {
 		byte buffer[] = new byte[CHUNK_SIZE];
 		int size = 0;
@@ -59,7 +63,6 @@ public class Downloader {
 				out.write(buffer, 0, count);
 			}
 			catch(IOException e) { continue; }
-			
 			size += count;
 			setProgress(100*size/content_length);
 			Thread.sleep(1000);

@@ -20,8 +20,7 @@ public class Test {
 			
 			downloader.addPropertyChangeListener(new  PropertyChangeListener() {
 				public void propertyChange(PropertyChangeEvent evt) {
-					System.out.print(".");
-					System.out.flush();
+					System.out.println();
 				}
 			});
 			
