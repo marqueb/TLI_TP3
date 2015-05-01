@@ -27,18 +27,18 @@
 	<path id="project.class.path">
 		<pathelement location="${jar.file}" />
 	</path>
-	
+
 	<target name="run-fc" depends="jar">
 		<java classname="downloader.fc.Test" fork="true">
 			<classpath refid="project.class.path" />
-			<arg value="ftp://anonymous:toto@ftp.oleane.fr/pub/linux/kernel/v2.6/linux-2.6.39.tar.gz" />
+			<arg value="http://iihm.imag.fr/blanch/M1/TLI/tps/3-notification/downloader.src.tgz" />
 		</java>
 	</target>
 		
 	<target name="run" depends="jar">
 		<java classname="${main-class}" fork="true">
 			<classpath refid="project.class.path" />
-			<arg value="ftp://anonymous:toto@ftp.oleane.fr/pub/linux/kernel/v2.6/linux-2.6.39.tar.gz" />
+			<arg value="http://iihm.imag.fr/blanch/M1/TLI/tps/3-notification/downloader.src.tgz" />
 		</java>
 	</target>
 	
